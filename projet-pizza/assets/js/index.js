@@ -17,12 +17,9 @@ window.addEventListener("DOMContentLoaded", function(){
     let availableIngredients = [];
     
     availableIngredients.push(Bacon, Carotte, Fromage, Oeuf, Aubergine, Chèvre, Miel, Champignon, Olive, Piment, PommeDeTerre, Tomate);
-    console.log(availableIngredients);
     
 function etape4()
 {
-    
-
     let section = document.getElementById("stage");
     let h2 = document.createElement("h2");
     let txt1 = document.createTextNode("Choix des ingrédients");
@@ -54,41 +51,31 @@ function etape4()
         img.setAttribute("src", availableIngredients[i].file);
         img.setAttribute("alt", availableIngredients[i].name);
         ul.appendChild(li);
+        article.setAttribute("class", "ingredients");
     }
-};
+    
+    let red = document.getElementsByClassName("ingredients");
+    for (let i = 0; i < red.length; i++)
+    {
+    red[i].addEventListener("click", function(event)
+           {
+                if (red[i].classList.contains("selected")) 
+                {
+                    red[i].classList.remove("selected");
+                }
+                else 
+                {
+                    red[i].classList.add("selected");
+                }
+           });
+    }
+}
+etape4();
+
 function etape5()
 {
     
-
-    let section = document.getElementById("choix");
     
-    let ul = document.createElement("ul");
-    
-    section.appendChild(ul);
-    
-    for (let i = 0; i < availableIngredients.length; i++)
-    {
-        let li = document.createElement("li");
-        let article = document.createElement("article");
-        let header = document.createElement("header");
-        let figure = document.createElement("figure");
-        let img = document.createElement("img");
-        let h3 = document.createElement("h3");
-        
-        let txt = document.createTextNode(availableIngredients[i].file);
-        let txt1 = document.createTextNode(availableIngredients[i].name);
-        
-        li.appendChild(article);
-        article.appendChild(header);
-        header.appendChild(figure);
-        h3.appendChild(txt1);
-        header.appendChild(h3);
-        figure.appendChild(img);
-        img.setAttribute("src", availableIngredients[i].file);
-        img.setAttribute("alt", availableIngredients[i].name);
-        ul.appendChild(li);
-    }
-};
+}
+etape5();
 });
-
- 
