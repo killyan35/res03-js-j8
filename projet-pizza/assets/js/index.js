@@ -79,7 +79,7 @@ function etape4()
     }
 }
 etape4();
-
+console.log(pizza1);
 function etape5()
 {
     
