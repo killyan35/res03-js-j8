@@ -1,4 +1,7 @@
 import { Ingredient } from './Ingredient.js';
+import { Pizza } from './pizza.js';
+
+
 
 window.addEventListener("DOMContentLoaded", function(){
     let Bacon = new Ingredient ("Bacon", "assets/img/bacon.png" );
@@ -17,6 +20,9 @@ window.addEventListener("DOMContentLoaded", function(){
     let availableIngredients = [];
     
     availableIngredients.push(Bacon, Carotte, Fromage, Oeuf, Aubergine, Chèvre, Miel, Champignon, Olive, Piment, PommeDeTerre, Tomate);
+    
+    
+    let pizza1 = new Pizza ();
     
 function etape4()
 {
@@ -62,10 +68,12 @@ function etape4()
                 if (red[i].classList.contains("selected")) 
                 {
                     red[i].classList.remove("selected");
+                    pizza1.removeIngredient(availableIngredients[i]);
                 }
                 else 
                 {
                     red[i].classList.add("selected");
+                    pizza1.addIngredient(availableIngredients[i]);
                 }
            });
     }
